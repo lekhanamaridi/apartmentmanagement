@@ -7,7 +7,7 @@ function ApartmentdataDetails() {
 
   useEffect(() => {
     try {
-      fetch("http://localhost:3000/apartmentdetails", 
+      fetch("http://localhost:3001/apartmentdetails", 
       { method: "POST" })
         .then((res) => res.json())
         .then((data) => {
@@ -29,7 +29,7 @@ function ApartmentdataDetails() {
     };
 
     try {
-      fetch("http://localhost:3000/searchapartment", {
+      fetch("http://localhost:3001/searchapartment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
