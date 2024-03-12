@@ -1,0 +1,43 @@
+.deletecontains{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    left: 80px;
+    top: 50px;
+}
+
+.deletetable{
+    width: 100%;
+}
+
+
+.deletelabel{
+    font-size: 20px;
+}
+
+.deleteinput{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: black;
+    font-size: 20px;  
+    border: 4px solid transparent
+}
+
+.deleterow{
+    width: 250px;
+}
+
+.deletebutton{
+    margin-top: 25px;
+    padding: 16px 34px;
+    border-radius: 10px;
+    border: transparent;
+    color: rgb(18, 17, 17);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}

@@ -1,13 +1,13 @@
 import { useState } from "react";
-import './Apartmentdelete.css'
-function Apartmentdelete() {
-  let [apartment_no, setapartment_no] = useState("");
+import './Tenantdelete.css'
+function Tenantdelete() {
+  let [tenant_id, settenant_id] = useState("");
   function del(){
     let data = {
-      'apartment_no' : apartment_no,
+      'tenant_id' : tenant_id,
     }
     try{
-      fetch(`http://localhost:3000/apartmentdelete ` ,
+      fetch(`http://localhost:3000/tenantdelete ` ,
       { method : "POST" , headers:{'Content-Type': 'application/json'} ,  body:JSON.stringify(data)})
       .then((res) => res.json())
       .then((data) => {
@@ -42,15 +42,15 @@ function Apartmentdelete() {
           <body>
             <tr>
               <td className="deleterow">
-                <label className="deletelabel">apartment_no</label>
+                <label className="deletelabel">tenant_id</label>
 
               </td>
               <td className="deleterow">
                 <input  className="deleteinput" type="text" required
-                onChange={(val) => {setapartment_no(val.target.value)}} />
+                onChange={(val) => {settenant_id(val.target.value)}} />
               </td>
             </tr>
-            <button type="submit" className="deletebutton" onClick={del}> submit </button>
+            <button type="submit" className="deltebutton" onClick={del}> submit </button>
           </body>
         </table>
       </div>
@@ -58,4 +58,4 @@ function Apartmentdelete() {
   );
 }
 
-export default Apartmentdelete;
+export default Tenantdelete;

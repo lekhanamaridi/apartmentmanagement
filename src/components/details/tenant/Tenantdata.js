@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import './Apartmentdata.css';
+import './Tenantdata.css';
 import { Link } from "react-router-dom";
-function ApartmentdataDetails() {
-  let [apartmentdata, setapartmentdata] = useState([]);
-  let [apartment, setapartmentdetails] = useState("");
+function TenantdataDetails() {
+  let [tenantdata, settenantdata] = useState([]);
+  let [tenant, settenantdetails] = useState("");
   let [result, setresult] = useState([]);
 
   useEffect(() => {
     try {
-      fetch("http://localhost:3000/apartmentdata", 
+      fetch("http://localhost:3000/tenantdata", 
       { method: "POST" })
         .then((res) => res.json())
         .then((data) => {
         console.log("Fetched data:", data);
-        setapartmentdata(data);
+        settenantdata(data);
         })
         .catch((error) => {
           console.log("Error fetching data:", error);
@@ -26,11 +26,11 @@ function ApartmentdataDetails() {
   // Search Function
   useEffect(() => {
     let data = {
-      'apartment': apartment
+      'tenant': tenant
     };
 
     try {
-      fetch("http://localhost:3000/apartmentsearch", {
+      fetch("http://localhost:3000/tenantsearch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -38,7 +38,7 @@ function ApartmentdataDetails() {
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);
-          setresult(apartmentdata);
+          setresult(tenantdata);
         })
         .catch((error) => {
           console.log("Error fetching data:", error);
@@ -46,29 +46,29 @@ function ApartmentdataDetails() {
     } catch (error) {
       console.error("Error:", error);
     }
-  }, [apartment]);
+  }, [tenant]);
 
-  let details = apartment ? result : apartmentdata;
+  let details = tenant ? result : tenantdata;
 
   return (
     <div>
       <div className="detailhead">
-        <h1><i>Apartment Details</i></h1>
+        <h1><i>Tenant Details</i></h1>
       </div>
       <div className="contains">
         <input
           type="text"
-          placeholder="Enter apartment_no"
+          placeholder="Enter Tenant_id"
           className="searchbar"
-          onChange={(val) => setapartmentdetails(val.target.value)}
+          onChange={(val) => settenantdetails(val.target.value)}
         />
-          <Link to="/apartment1">
+          <Link to="/tenant1">
             <button className="view1" type='button'><b>insert</b></button>
           </Link>
-          <Link to="/apartment2">
+          <Link to="/tenant2">
             <button className="view2" type='button'><b>delete</b></button>
           </Link>
-          <Link to="/apartment3">
+          <Link to="/tenant3">
             <button className="view3" type='button'><b>update</b></button>
           </Link>
         </div>
@@ -76,13 +76,19 @@ function ApartmentdataDetails() {
           <div>
           <table className="table">
             <tr>
+              <th className="tableheader"> tenant_id</th>
+              <th className="tableheader"> tenant_name</th>
               <th className="tableheader"> apartment_no</th>
-              <th className="tableheader"> block_no</th>
+              <th className="tableheader"> email</th>
+              <th className="tableheader"> phone</th>
             </tr>
             {details.map((elem) => (
               <tr className="tablerow">
+                <td className="tabledata">{elem.tenant_id}</td>
+                <td className="tabledata">{elem.name}</td>
                 <td className="tabledata">{elem.apartment_no}</td>
-                <td className="tabledata">{elem.block_no}</td>
+                <td className="tabledata">{elem.email}</td>
+                <td className="tabledata">{elem.phone}</td>
               </tr>
             ))}
           </table>
@@ -92,4 +98,4 @@ function ApartmentdataDetails() {
   );
 }
 
-export default ApartmentdataDetails;
+export default TenantdataDetails;

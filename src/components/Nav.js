@@ -10,12 +10,18 @@ function Nav()
                 </div>
                 <div className='sidenav'>
                     <h2 className='text1'>HOME</h2>
-                    <h2 className='text2'>Block</h2>
-                    <Link to='/apartment'>
-                            <h2 className='text3'>Apartment</h2>
+                    <Link to='/block'>
+                        <h2 className='text2'>Block</h2>
                     </Link>
-                    <h2 className='text4'>Owner</h2>
-                    <h2 className='text5'>Tenant</h2>
+                    <Link to='/apartment'>
+                        <h2 className='text3'>Apartment</h2>
+                    </Link>
+                    <Link to='/owner'>
+                        <h2 className='text4'>Owner</h2>
+                    </Link>
+                    <Link to='/tenant'>
+                        <h2 className='text5'>Tenant</h2>
+                    </Link>
                 </div>
             </div>
         </div>

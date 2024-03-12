@@ -1,15 +1,15 @@
 import { useState } from "react";
-import './Apartmentupdate.css'
-function Apartmentupdate() {
-  let [apartment_no, setapartment_no] = useState("");
-  let [block_no , setblock_no] = useState("");
+import './Blockupdate.css'
+function Blockupdate() {
+  let [block_no, setblock_no] = useState("");
+  let [block_name , setblock_name] = useState("");
   function send(){
     let data = {
-      'apartment_no' : apartment_no,
-      'block_no' : block_no
+      'block_no' : block_no,
+      'block_name' : block_name
     }
     try{
-      fetch(`http://localhost:3000/apartmentupdate ` ,
+      fetch(`http://localhost:3000/blockupdate ` ,
       { method : "POST" , headers:{'Content-Type': 'application/json'} ,  body:JSON.stringify(data)})
       .then((res) => res.json())
       .then((data) => {
@@ -44,20 +44,20 @@ function Apartmentupdate() {
           <body>
             <tr>
               <td className="updaterow">
-                <label className="updatelabel">apartment_no</label>
+                <label className="updatelabel">block_no</label>
               </td>
               <td className="updaterow">
                 <input  className="updateinput" type="text" required
-                onChange={(val) => {setapartment_no(val.target.value)}} />
+                onChange={(val) => {setblock_no(val.target.value)}} />
               </td>
             </tr>
             <tr>
               <td>
-                <label className="updatelabel">block_no</label>
+                <label className="updatelabel">block_name</label>
               </td>
               <td>
                 <input className="updateinput" type="text" required
-                onChange={(val) => {setblock_no(val.target.value)}}/>
+                onChange={(val) => {setblock_name(val.target.value)}}/>
               </td>
             </tr>
             <button type="submit" className="updatebutton" onClick={send}> submit </button>
@@ -68,4 +68,4 @@ function Apartmentupdate() {
   );
 }
 
-export default Apartmentupdate;
+export default Blockupdate;

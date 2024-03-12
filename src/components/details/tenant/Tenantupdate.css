@@ -1,0 +1,43 @@
+.updatecontains{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    left: 80px;
+    top: 50px;
+}
+
+.updatetable{
+    width: 100%;
+}
+
+
+.updatelabel{
+    font-size: 20px;
+}
+
+.updateinput{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: black;
+    font-size: 20px;  
+    border: 4px solid transparent
+}
+
+.updaterow{
+    width: 250px;
+}
+
+.updatebutton{
+    margin-top: 25px;
+    padding: 16px 34px;
+    border-radius: 10px;
+    border: transparent;
+    color: rgb(18, 17, 17);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
