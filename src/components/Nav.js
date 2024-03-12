@@ -12,9 +12,7 @@ function Nav()
                     <h2 className='text1'>HOME</h2>
                     <h2 className='text2'>Block</h2>
                     <Link to='/apartment'>
-                        {/* <Link to='/apartment1'> */}
                             <h2 className='text3'>Apartment</h2>
-                        {/* </Link> */}
                     </Link>
                     <h2 className='text4'>Owner</h2>
                     <h2 className='text5'>Tenant</h2>

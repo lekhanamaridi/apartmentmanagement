@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import './Apartmentdata.css';
+import './Data.css';
+import { Link } from "react-router-dom";
 function ApartmentdataDetails() {
   let [apartmentdata, setapartmentdata] = useState([]);
   let [apartment, setapartmentdetails] = useState("");
@@ -7,7 +8,7 @@ function ApartmentdataDetails() {
 
   useEffect(() => {
     try {
-      fetch("http://localhost:3001/apartmentdetails", 
+      fetch("http://localhost:3000/apartmentdata", 
       { method: "POST" })
         .then((res) => res.json())
         .then((data) => {
@@ -29,7 +30,7 @@ function ApartmentdataDetails() {
     };
 
     try {
-      fetch("http://localhost:3001/searchapartment", {
+      fetch("http://localhost:3000/apartmentsearch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -37,7 +38,7 @@ function ApartmentdataDetails() {
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);
-          setresult(data);
+          setresult(apartmentdata);
         })
         .catch((error) => {
           console.log("Error fetching data:", error);
@@ -61,22 +62,33 @@ function ApartmentdataDetails() {
           className="searchbar"
           onChange={(val) => setapartmentdetails(val.target.value)}
         />
-
-        <table className="table">
-          <tr>
-            <th className="tableheader"> apartment_no</th>
-            <th className="tableheader"> block_no</th>
-          </tr>
-
-          {details.map((elem) => (
-            <tr className="tablerow">
-              <td className="tabledata">{elem.apartment_no}</td>
-              <td className="tabledata">{elem.block_no}</td>
+          <Link to="/apartment1">
+            <button className="view1" type='button'><b>insert</b></button>
+          </Link>
+          <Link to="/apartment2">
+            <button className="view2" type='button'><b>delete</b></button>
+          </Link>
+          <Link to="/apartment3">
+            <button className="view3" type='button'><b>update</b></button>
+          </Link>
+        </div>
+        <div>
+          <div>
+          <table className="table">
+            <tr>
+              <th className="tableheader"> apartment_no</th>
+              <th className="tableheader"> block_no</th>
             </tr>
-          ))}
-        </table>
+            {details.map((elem) => (
+              <tr className="tablerow">
+                <td className="tabledata">{elem.apartment_no}</td>
+                <td className="tabledata">{elem.block_no}</td>
+              </tr>
+            ))}
+          </table>
+          </div>
+        </div>
       </div>
-    </div>
   );
 }
 

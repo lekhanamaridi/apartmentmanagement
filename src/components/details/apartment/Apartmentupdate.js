@@ -1,6 +1,6 @@
 import { useState } from "react";
-import './Insert.css'
-function Apartmentinsert() {
+import './Update.css'
+function Apartmentupdate() {
   let [apartment_no, setapartment_no] = useState("");
   let [block_no , setblock_no] = useState("");
   function send(){
@@ -9,19 +9,21 @@ function Apartmentinsert() {
       'block_no' : block_no
     }
     try{
-      fetch(`http://localhost:3000/apartmentinsert ` ,
+      fetch(`http://localhost:3000/apartmentupdate ` ,
       { method : "POST" , headers:{'Content-Type': 'application/json'} ,  body:JSON.stringify(data)})
       .then((res) => res.json())
       .then((data) => {
         if (data.message){
           console.log(data.message);
           alert(data.message);
+          
         }
         if(data.sqlMessage){
           console.log(data.sqlMessage); 
           alert(data.sqlMessage);
         }
         console.log(data.results); 
+        alert('dataupdated')
       })
       .catch((error) => console.log(error));
 
@@ -35,30 +37,30 @@ function Apartmentinsert() {
   return (
     <div>
 
-      <div className="insertcontains">
+      <div className="updatecontains">
 
-        <table className="inserttable">
+        <table className="updatetable">
           
           <body>
             <tr>
-              <td className="insertrow">
-                <label className="insertlabel">apartment_no</label>
+              <td className="updaterow">
+                <label className="updatelabel">apartment_no</label>
               </td>
-              <td className="insertrow">
-                <input  className="insertinput" type="text" required
+              <td className="updaterow">
+                <input  className="updateinput" type="text" required
                 onChange={(val) => {setapartment_no(val.target.value)}} />
               </td>
             </tr>
             <tr>
               <td>
-                <label className="insertlabel">block_no</label>
+                <label className="updatelabel">block_no</label>
               </td>
               <td>
-                <input className="insertinput" type="text" required
+                <input className="updateinput" type="text" required
                 onChange={(val) => {setblock_no(val.target.value)}}/>
               </td>
             </tr>
-            <button type="submit" className="insertbutton" onClick={send}> submit </button>
+            <button type="submit" className="updatebutton" onClick={send}> submit </button>
           </body>
         </table>
       </div>
@@ -66,4 +68,4 @@ function Apartmentinsert() {
   );
 }
 
-export default Apartmentinsert;
+export default Apartmentupdate;
