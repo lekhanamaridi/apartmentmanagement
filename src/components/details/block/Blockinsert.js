@@ -36,9 +36,9 @@ function Blockinsert() {
     <div>
 
       <div className="insertcontains">
-
+        <h1 className="blockhead"><i>Block Insertion</i></h1>
         <table className="inserttable">
-          
+         <div className="insertcontent"> 
           <body>
             <tr>
               <td className="insertrow">
@@ -60,6 +60,7 @@ function Blockinsert() {
             </tr>
             <button type="submit" className="insertbutton" onClick={send}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

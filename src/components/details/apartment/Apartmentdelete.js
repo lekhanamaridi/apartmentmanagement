@@ -36,9 +36,9 @@ function Apartmentdelete() {
     <div>
 
       <div className="deletecontains">
-
+      <h1 className="apartmenthead"><i>Apartment Deletion</i></h1>
         <table className="deletetable">
-          
+        <div className="deletecontent"> 
           <body>
             <tr>
               <td className="deleterow">
@@ -52,6 +52,7 @@ function Apartmentdelete() {
             </tr>
             <button type="submit" className="deletebutton" onClick={del}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

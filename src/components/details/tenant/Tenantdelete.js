@@ -36,8 +36,9 @@ function Tenantdelete() {
     <div>
 
       <div className="deletecontains">
-
+      <h1 className="tenanthead"><i>Tenant Deletion</i></h1>
         <table className="deletetable">
+        <div className="deletecontent"> 
           
           <body>
             <tr>
@@ -50,8 +51,9 @@ function Tenantdelete() {
                 onChange={(val) => {settenant_id(val.target.value)}} />
               </td>
             </tr>
-            <button type="submit" className="deltebutton" onClick={del}> submit </button>
+            <button type="submit" className="deletebutton" onClick={del}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

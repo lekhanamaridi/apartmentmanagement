@@ -78,11 +78,17 @@ function ApartmentdataDetails() {
             <tr>
               <th className="tableheader"> apartment_no</th>
               <th className="tableheader"> block_no</th>
+              <th className="tableheader"> apartment_status</th>
+              <th className="tableheader"> apartment_type</th>
+              <th className="tableheader"> price</th>
             </tr>
             {details.map((elem) => (
               <tr className="tablerow">
                 <td className="tabledata">{elem.apartment_no}</td>
                 <td className="tabledata">{elem.block_no}</td>
+                <td className="tabledata">{elem.apartment_status}</td>
+                <td className="tabledata">{elem.apartment_type}</td>
+                <td className="tabledata">{elem.price}</td>
               </tr>
             ))}
           </table>

@@ -42,9 +42,9 @@ function Ownerinsert() {
     <div>
 
       <div className="insertcontains">
-
+      <h1 className="ownerhead"><i>Owner Insertion</i></h1>
         <table className="inserttable">
-          
+        <div className="insertcontent"> 
           <body>
             <tr>
               <td className="insertrow">
@@ -93,6 +93,7 @@ function Ownerinsert() {
             </tr>
             <button type="submit" className="insertbutton" onClick={send}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

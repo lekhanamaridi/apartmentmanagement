@@ -38,9 +38,9 @@ function Blockupdate() {
     <div>
 
       <div className="updatecontains">
-
+      <h1 className="blockhead"><i>Block Modification</i></h1>
         <table className="updatetable">
-          
+        <div className="updatecontent"> 
           <body>
             <tr>
               <td className="updaterow">
@@ -62,6 +62,7 @@ function Blockupdate() {
             </tr>
             <button type="submit" className="updatebutton" onClick={send}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

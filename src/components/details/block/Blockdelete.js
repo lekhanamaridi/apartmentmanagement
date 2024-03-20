@@ -36,9 +36,9 @@ function Blockdelete() {
     <div>
 
       <div className="deletecontains">
-
+      <h1 className="blockhead"><i>Block Deletion</i></h1>
         <table className="deletetable">
-          
+        <div className="deletecontent"> 
           <body>
             <tr>
               <td className="deleterow">
@@ -50,8 +50,9 @@ function Blockdelete() {
                 onChange={(val) => {setblock_no(val.target.value)}} />
               </td>
             </tr>
-            <button type="submit" className="deltebutton" onClick={del}> submit </button>
+            <button type="submit" className="deletebutton" onClick={del}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

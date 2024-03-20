@@ -44,9 +44,9 @@ function Ownerupdate() {
     <div>
 
       <div className="updatecontains">
-
+      <h1 className="ownerhead"><i>Owner Modification</i></h1>
         <table className="updatetable">
-          
+        <div className="updatecontent"> 
           <body>
             <tr>
               <td className="updaterow">
@@ -95,6 +95,7 @@ function Ownerupdate() {
             </tr>
             <button type="submit" className="updatebutton" onClick={send}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

@@ -44,8 +44,9 @@ function Tenantupdate() {
     <div>
 
       <div className="updatecontains">
-
+      <h1 className="tenanthead"><i>Tenant Modification</i></h1>
         <table className="updatetable">
+        <div className="updatecontent"> 
           
           <body>
             <tr>
@@ -95,6 +96,7 @@ function Tenantupdate() {
             </tr>
             <button type="submit" className="updatebutton" onClick={send}> submit </button>
           </body>
+          </div>
         </table>
       </div>
     </div>

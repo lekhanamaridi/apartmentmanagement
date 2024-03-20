@@ -85,7 +85,7 @@ function TenantdataDetails() {
             {details.map((elem) => (
               <tr className="tablerow">
                 <td className="tabledata">{elem.tenant_id}</td>
-                <td className="tabledata">{elem.name}</td>
+                <td className="tabledata">{elem.tenant_name}</td>
                 <td className="tabledata">{elem.apartment_no}</td>
                 <td className="tabledata">{elem.email}</td>
                 <td className="tabledata">{elem.phone}</td>

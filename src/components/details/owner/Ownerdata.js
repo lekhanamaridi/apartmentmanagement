@@ -77,7 +77,7 @@ function OwnerdataDetails() {
           <table className="table">
             <tr>
               <th className="tableheader"> owner_id</th>
-              <th className="tableheader"> name</th>
+              <th className="tableheader"> owner_name</th>
               <th className="tableheader"> apartment_no</th>
               <th className="tableheader"> email</th>
               <th className="tableheader"> phone</th>
@@ -85,7 +85,7 @@ function OwnerdataDetails() {
             {details.map((elem) => (
               <tr className="tablerow">
                 <td className="tabledata">{elem.owner_id}</td>
-                <td className="tabledata">{elem.name}</td>
+                <td className="tabledata">{elem.owner_name}</td>
                 <td className="tabledata">{elem.apartment_no}</td>
                 <td className="tabledata">{elem.email}</td>
                 <td className="tabledata">{elem.phone}</td>
