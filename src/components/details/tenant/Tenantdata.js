@@ -26,7 +26,7 @@ function TenantdataDetails() {
   // Search Function
   useEffect(() => {
     let data = {
-      'tenant': tenant
+      'tenant_id': tenant
     };
 
     try {
@@ -38,7 +38,7 @@ function TenantdataDetails() {
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);
-          setresult(tenantdata);
+          setresult(data);
         })
         .catch((error) => {
           console.log("Error fetching data:", error);

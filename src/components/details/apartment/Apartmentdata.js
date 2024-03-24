@@ -26,7 +26,7 @@ function ApartmentdataDetails() {
   // Search Function
   useEffect(() => {
     let data = {
-      'apartment': apartment
+      'apartment_no': apartment
     };
 
     try {
@@ -38,7 +38,7 @@ function ApartmentdataDetails() {
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);
-          setresult(apartmentdata);
+          setresult(data);
         })
         .catch((error) => {
           console.log("Error fetching data:", error);

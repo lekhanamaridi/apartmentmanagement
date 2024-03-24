@@ -26,7 +26,7 @@ function BlockdataDetails() {
   // Search Function
   useEffect(() => {
     let data = {
-      'block': block
+      'block_no': block
     };
 
     try {
@@ -38,7 +38,7 @@ function BlockdataDetails() {
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);
-          setresult(blockdata);
+          setresult(data);
         })
         .catch((error) => {
           console.log("Error fetching data:", error);

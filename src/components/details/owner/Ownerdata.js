@@ -26,7 +26,7 @@ function OwnerdataDetails() {
   // Search Function
   useEffect(() => {
     let data = {
-      'owner': owner
+      'owner_id': owner
     };
 
     try {
@@ -38,7 +38,7 @@ function OwnerdataDetails() {
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);
-          setresult(ownerdata);
+          setresult(data);
         })
         .catch((error) => {
           console.log("Error fetching data:", error);
